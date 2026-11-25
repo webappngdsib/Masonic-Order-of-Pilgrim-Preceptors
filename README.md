@@ -14,6 +14,7 @@
 
 | Ενότητα | Περιεχόμενο και λειτουργίες |
 | --- | --- |
+| [Αρχική](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#home) | Σύντομη εισαγωγή στη διδασκαλία του Τάγματος και στις αξίες του. |
 | [Πρόσκληση](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#invitation) | Προσωπική πρόσκληση για ιδρυτικά μέλη στα ελληνικά και στα αγγλικά, με κείμενο για αναζήτηση και αντιγραφή. |
 | [Λάβαρα](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#banners) | Επίσημα λάβαρα του Region Hellas και των Conclaves Αθήνας, Πειραιά, Κέρκυρας και Θεσσαλονίκης, με προβολή σε μεγέθυνση. |
 | [Ημερολόγιο](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#calendar) | Επιβεβαιωμένες ημερομηνίες για το 2027 και προσωρινές για το 2028, με προσθήκη εκδηλώσεων στο ημερολόγιο μέσω αρχείων `.ics`. |
