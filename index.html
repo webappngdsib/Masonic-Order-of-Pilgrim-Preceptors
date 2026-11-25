@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>Pilgrim Preceptors · Region Hellas</title>
-<meta name="description" content="The Masonic Order of Pilgrim Preceptors · Region Hellas — personal invitation, official banners and calendar."/>
+<meta name="description" content="The Masonic Order of Pilgrim Preceptors · Region Hellas — regional calendar, founding invitation, official banners and Secretariat access."/>
 <style>
 :root{--purple:#642078;--deep:#321146;--gold:#c69b36;--gold-l:#e8ca7a;--navy:#14204a;--cream:#fbfaf6;--ink:#28212c;--muted:#66556b;--line:#eadfcb}
 *{box-sizing:border-box}
@@ -104,9 +104,127 @@ footer{text-align:center;border-top:2px solid var(--gold);padding:22px;color:#6e
 footer a{color:#6e5d74}
 
 @media print{header.top,nav.menu,footer,.lang,details,.meta,.ics{display:none!important}body{background:#fff}main{padding:0}.paper{box-shadow:none;max-width:none}section.view{display:none!important}section.view.active{display:block!important}}
+/* Site navigation and responsive layout */
+:root {
+  --gutter: clamp(14px, 4vw, 32px);
+  --surface: #fffdf9;
+}
+body { font-family: system-ui, sans-serif; }
+h1, h2, h3, h4, .datetile, .mini { font-family: Georgia, serif; }
+header.top {
+  padding-top: calc(clamp(28px, 6vw, 62px) + env(safe-area-inset-top));
+  padding-bottom: clamp(25px, 5vw, 48px);
+}
+header.top .eyebrow { line-height: 1.5; }
+header.top h1 { font-size: clamp(32px, 6vw, 60px); }
+header.top p { line-height: 1.5; }
+nav.menu { padding-inline: env(safe-area-inset-left) env(safe-area-inset-right); }
+nav.menu ul { gap: 4px; padding: 4px 12px; }
+nav.menu a {
+  min-height: 48px;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 8px 14px;
+  font-size: .875rem;
+  line-height: 1.25;
+  letter-spacing: .015em;
+  text-transform: none;
+}
+nav.menu a[aria-current="page"] { background: #ffffff14; border-radius: 6px 6px 0 0; }
+main {
+  padding: clamp(20px, 4vw, 44px) max(var(--gutter), env(safe-area-inset-right))
+    clamp(42px, 7vw, 76px) max(var(--gutter), env(safe-area-inset-left));
+}
+h2.title { font-size: clamp(27px, 4vw, 40px); }
+.sub { font-size: 1rem; line-height: 1.5; }
+:focus-visible { outline: 3px solid #a35db2; outline-offset: 3px; }
+nav.menu :focus-visible, .feature :focus-visible { outline-color: var(--gold-l); }
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 20;
+  transform: translateY(-160%);
+  padding: 12px;
+  background: white;
+}
+.skip-link:focus { transform: none; }
+.calendar-years { grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); }
+.feature { padding: clamp(20px, 4vw, 36px); }
+.feature .grid > div { min-width: 0; }
+.events li > div:last-child { min-width: 0; overflow-wrap: anywhere; }
+.events .org { color: #765521; }
+.events b, .events p, .note { font-size: 1rem; }
+.ics {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 14px;
+  font-size: .875rem;
+}
+.lang button, summary, .lightbox .x { min-height: 44px; }
+summary { padding-block: 10px; }
+figcaption { font-size: .875rem; }
+footer { padding-bottom: max(22px, env(safe-area-inset-bottom)); }
+footer a { display: inline-flex; align-items: center; min-height: 44px; margin-inline: 8px; }
+.secretariat { max-width: 810px; margin-inline: auto; }
+.secretariat-access { margin-top: 26px; }
+.secretariat-access a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 19px;
+  background: var(--gold-l);
+  color: var(--deep);
+  border-radius: 7px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.secretariat-access a:hover { background: #ffe4a3; }
+.portal-actions {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr));
+  gap: 14px;
+}
+.portal-actions li {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+}
+.portal-actions h3 { margin: 0 0 7px; color: var(--deep); }
+.portal-actions p { margin: 0; line-height: 1.5; color: var(--muted); }
+.calendar-portal { margin-top: 20px; text-align: center; }
+.calendar-portal a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 600px) {
+  nav.menu ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-inline: 5px; gap: 2px; }
+  nav.menu a { height: 100%; padding-inline: 2px; font-size: .8125rem; }
+  nav.menu svg { display: none; }
+  nav.menu li:last-child { display: none; }
+  .feature .grid { gap: 16px; }
+  .datetile { width: 94px; }
+  .datetile .d { font-size: 36px; }
+  .year > header { padding: 12px; gap: 8px; }
+  .events { padding-inline: 12px; }
+  .events li { gap: 10px; }
+  .mini { width: 45px; }
+}
+@media (max-width: 350px) {
+  .gallery { grid-template-columns: 1fr; }
+  .events li { display: grid; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <header class="top">
   <div class="eyebrow">THE MASONIC ORDER OF PILGRIM PRECEPTORS</div>
   <h1>REGION HELLAS</h1>
@@ -118,13 +236,14 @@ footer a{color:#6e5d74}
     <li><a href="#invitation" data-view="invitation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Invitation</a></li>
     <li><a href="#banners" data-view="banners"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v18M5 4h13l-3 4.5 3 4.5H5"/></svg>Banners</a></li>
     <li><a href="#calendar" data-view="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Calendar</a></li>
+    <li><a href="#secretariat" data-view="secretariat">Secretariat</a></li>
     <li><a href="https://pilgrimpreceptors.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Official Website</a></li>
   </ul>
 </nav>
 
-<main>
+<main id="main-content" tabindex="-1">
   <!-- INVITATION -->
-  <section class="view" id="view-invitation" aria-labelledby="h-inv">
+  <section class="view active" id="view-invitation" aria-labelledby="h-inv">
     <h2 class="title" id="h-inv">Personal Invitation</h2>
     <div class="rule">✦</div>
     <p class="sub">Founding Membership · Athens, 9 November 2026</p>
@@ -168,7 +287,7 @@ footer a{color:#6e5d74}
       </div>
     </article>
 
-    <div class="years">
+    <div class="years calendar-years">
       <div class="year">
         <header><h4>2027</h4><span class="badge conf">Confirmed</span></header>
         <ul class="events">
@@ -187,17 +306,38 @@ footer a{color:#6e5d74}
     </div>
 
     <p class="note">Each Conclave meets <strong>twice annually</strong> from the Masonic year 2026–2027. The Annual Regional Conclave is held on the <strong>last weekend of February</strong> together with the Provincial Grand Court of The Masonic Order of Athelstan. 2028 dates follow this pattern and are subject to official confirmation. The detailed programme will be communicated in due course.</p>
+    <p class="calendar-portal"><a href="#secretariat">Open Secretariat access for invitations and responses</a></p>
+  </section>
+
+  <section class="view secretariat" id="view-secretariat" aria-labelledby="h-secretariat">
+    <h2 class="title" id="h-secretariat">Region Hellas Secretariat</h2>
+    <div class="rule" aria-hidden="true">✦</div>
+    <p class="sub">Private portal for authorised users</p>
+    <article class="feature">
+      <h3>Sign in to the Secretariat</h3>
+      <p>Use your authorised ChatGPT account to access the region’s records and manage Secretariat work.</p>
+      <div class="secretariat-access">
+        <a href="https://pilgrim-preceptors-hellas-secretariat.dskiad.chatgpt.site/">Open the Secretariat portal</a>
+      </div>
+    </article>
+    <ul class="portal-actions">
+      <li><h3>Members and Conclaves</h3><p>Manage regional membership and Conclave records.</p></li>
+      <li><h3>Invitations and responses</h3><p>Manage invitations, track replies and review attendance.</p></li>
+      <li><h3>Secretariat records</h3><p>Access the region’s administrative records and documents.</p></li>
+    </ul>
   </section>
 </main>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Banner preview"><button class="x" aria-label="Close">×</button><img alt=""/><p></p></div>
 
-<footer>Pilgrim Preceptors · Region Hellas · Official invitation · V3 · <a href="https://pilgrimpreceptors.com/" target="_blank" rel="noopener">pilgrimpreceptors.com</a></footer>
+<footer>Pilgrim Preceptors · Region Hellas · <a href="#secretariat">Secretariat</a> · <a href="https://pilgrimpreceptors.com/" target="_blank" rel="noopener">pilgrimpreceptors.com</a></footer>
 
 <script>
 const texts={'el': '           THE MASONIC ORDER OF PILGRIM PRECEPTORS\n                       REGION HELLAS\n                 FOUR CONCLAVES AND INAUGURATION OF A NEW REGION\n      ΠΡΟΣΩΠΙΚΗ ΠΡΟΣΚΛΗΣΗ ΓΙΑ ΙΔΡΥΤΙΚΗ ΙΔΙΟΤΗΤΑ ΜΕΛΟΥ  ΑΘΗΝΑ 9 ΝΟΕΜΒΡΙΟΥ 2026\n\nΑγαπητέ Αδελφέ,\nΟ Αδ. Ιωάννης Μπενετάτος, Past Grand Registrar του The Masonic Order of Pilgrim\nPreceptors και Provincial Grand Master της Province of Greece του Masonic Order of\nAthelstan in England, Wales and its Provinces Overseas μαζι με τον  Αδ. Αριστείδη\nΣάμιο,  Past Grand  Registrar  και Designated Regional Governor, σας απευθύνει\nπροσωπική πρόσκληση να γίνετε Ιδρυτικό Μέλος  ενός από τα τέσσερα νέα Conclaves\nτου The Masonic Order of Pilgrim Preceptors, τα οποία πρόκειται να εγκαθιδρυθούν στην\nΕλλάδα.\nΗ προσωπική επιλογή σας από τους Αδ. Ιωάννη Μπενετάτο και Αδ. Αριστείδη Σάμιο\nεκφράζει την ιδιαίτερη εκτίμηση προς την αδελφική σας προσφορά και τη συμβολή\nσας στην Ελευθεροτεκτονική.\nΑΠΑΡΑΙΤΗΤΕΣ ΠΡΟΥΠΟΘΕΣΕΙΣ ΕΙΣΔΟΧΗΣ\nΑπαραίτητη προϋπόθεση για την εισδοχή ως Ιδρυτικό Μέλος είναι ο Αδελφός να έχει\nεγκατασταθεί ως Σεβάσμιος Διδάσκαλος σε Στοά υπό την Εθνική Μεγάλη Στοά της\nΕλλάδος  , καθώς και ως Α΄ Άρχων σε Περιστύλιο Βασιλικής Αψίδος υπό το Ύπατο\nΜέγα Περιστύλιο της Ελλάδος και να διατηρεί ενεργή ιδιότητα μέλους στα αντίστοιχα\nσώματα.\nΠΑΡΑΣΚΕΥΗ, 26 ΦΕΒΡΟΥΑΡΙΟΥ 2027  - The Masonic Order of Pilgrim Preceptors\nΘα  πραγματοποιηθεί η Εγκαθίδρυση των τεσσάρων νέων Conclaves  και η επίσημη\nInauguration του νέου Region του The Masonic Order of Pilgrim Preceptors στην Ελλάδα.\nΟ Αδ. Αριστείδης Σάμιος, Past Grand Registrar και Designated Regional Governor, θα\nαναλάβει τα καθήκοντα του Regional Governor. Από το Masonic year 2026–2027, κάθε\nConclave θα συνεδριάζει δύο φορές ετησίως. Το Annual Regional Conclave θα αποτελεί\nμέρος κοινού Masonic Weekend με το Provincial Grand Court του The Masonic Order of\nAthelstan στην Ελλάδα, το τελευταίο Σάββατο του Φεβρουαρίου (28 Φεβρουαρίου 2026 και\n27 Φεβρουαρίου 2027). Το 2027 οι εργασίες των Pilgrim Preceptors θα διεξαχθούν την\nΠαρασκευή 26 Φεβρουαρίου και θα ακολουθήσει το Provincial Grand Court του Athelstan το\nΣάββατο 27 Φεβρουαρίου.\nΣΑΒΒΑΤΟ, 27 ΦΕΒΡΟΥΑΡΙΟΥ 2027 - Masonic Order of Athelstan in England, Wales and\nits Provinces Overseas\nΤην επόμενη ημέρα θα πραγματοποιηθεί η Επαρχιακή Μεγάλη Συνέλευση της Επαρχίας\nΕλλαδός του The Masonic Order of Athelstan, με την Αφιέρωση του νέου Επαρχιακού\nΛαβάρου και την Εγκαθίδρυση του όγδοου Court της Province μας.\nΦΙΛΟΞΕΝΙΑ ΤΩΝ ΑΔΕΛΦΩΝ\nΣτους Αδελφοί που θα ταξιδέψουν από περιοχές εκτός της διοργανώτριας περιοχής θα\nπροσφερθεί δωρεάν διαμονή την Πέμπτη 25 και την Παρασκευή 26 Φεβρουαρίου 2027. Η\nΕπαρχία Ελλαδος   θα προσφέρει επίσης χωρίς χρέωση το γεύμα του Σαββάτου 27\nΦεβρουαρίου 2027.\nΕΤΗΣΙΑ ΣΥΝΔΡΟΜΗ ΚΑΙ ΔΙΑΣΗΜΑ\nΤο συνολικό κόστος για την annual subscription, τα regalia του Order (tie, lapel pin,\nsash, collar και jewel), καθώς και τα Rituals και Constitutions, ανέρχεται σε €100.\nΗ παρουσία σας θα αποτελέσει ιδιαίτερη τιμή. Παρακαλούμε να επιβεβαιώσετε τη\nσυμμετοχή σας εντός δύο (2) ημερών από την αποστολή της παρούσας πρόσκλησης.\nΤο αναλυτικό πρόγραμμα και οι λοιπές λεπτομέρειες θα γνωστοποιηθούν εγκαίρως.\nΜε αδελφικούς χαιρετισμούς,\nDimitrios Skiadopoulos\nPast Assistant Grand Marshal ,Executive Organiser, Region Hellas\ndskiad@gmail.com | +30 695 109 7562\n\n\n                                                                                           Σελίδα 1 από 2', 'en': '          THE MASONIC ORDER OF PILGRIM PRECEPTORS\n                      REGION HELLAS\n                FOUR CONCLAVES AND INAUGURATION OF A NEW REGION\n        PERSONAL INVITATION TO FOUNDING MEMBERSHIP ATHENS 9 ΝOVEMBER 2026\n\nDear Brother,\nBro. Ioannis Benetatos, Past Grand Registrar of The Masonic Order of Pilgrim Preceptors\nand Provincial Grand Master of the Province of Greece of the Masonic Order of Athelstan in\nEngland, Wales and  its Provinces Overseas and Bro. Aristidis Samios, Past Grand\nRegistrar and Designated Regional Governor, are pleased to jointly extend this\npersonal invitation to you for becoming a Founding Member of one of the four new\nConclaves of TheMasonic Order of Pilgrim Preceptors, which are to be consecrated in\nGreece. \u200b\nYour personal selection, jointly made by Bro. Ioannis Benetatos and Bro.\nAristidis Samios, reflects their shared appreciation of your fraternal service,\nyour dedication to the Craft, and your valuable contribution to Freemasonry.\n                             ESSENTIAL QUALIFICATIONS FOR ADMISSION\nTo be admitted as a Founding Member, a Brother must have been duly installed as\nWorshipful Master of a Craft Lodge under the National Grand Lodge of Greece and as\nFirst Principal of a Royal Arch Chapter under the Supreme Grand Chapter of Royal\nArch Masons of Greece and must remain an active member of the respective bodies.\nFRIDAY, 26 FEBRUARY 2027 The Masonic Order of Pilgrim Preceptors\nThe Consecration of the four new Conclaves and the official Inauguration of the new Region\nof The Masonic Order of Pilgrim Preceptors in Greece will take place. Bro. Aristidis Samios,\nPast Grand Registrar and Designated Regional Governor,  will assume the office of\nRegional Governor. From the Masonic year 2026–2027, each Conclave will meet twice\nannually. The Annual Regional Conclave will form part of a joint Masonic Weekend with the\nProvincial Grand Court of The Masonic Order of Athelstan in Greece, on the last Saturday of\nFebruary (28 February 2026 and 27 February 2027). In 2027 the Pilgrim Preceptors meeting\nwill take place on Friday 26 February, followed by the Athelstan Provincial Grand Court on\nSaturday 27 February.\nSATURDAY, 27 FEBRUARY 2027 The Masonic Order of Athelstan\nThe following day, the Provincial Grand Court Assembly of the Province of Greece of\nThe Masonic Order of Athelstan  will be held, including the Dedication of the new\nProvincial Banner and the Consecration of the eighth (8th) Court of our Province.\n                                            HOSPITALITY FOR BRETHREN\nBrethren travelling from outside the host area will be offered complimentary accommodation\non Thursday 25 and Friday 26 February 2027. The Province of Greece of Athelstan will also\nprovide the luncheon of the Provincial Grand Court on Saturday 27 February 2027 free of\ncharge.\n                               ANNUAL SUBSCRIPTION AND REGALIA\nThe total cost of the annual subscription, the Order regalia (tie, lapel pin, sash, collar\nand jewel), together with the Rituals and Constitutions, is €100.\nYour presence would be a particular honour. Kindly confirm your participation within\ntwo  (2) days of receiving  this  invitation. The detailed programme and further\narrangements will be communicated in due course.\n\nWith warm fraternal regards,\nDimitrios Skiadopoulos\nPast Assistant Grand Marshal ,Executive Organiser, Region Hellas\ndskiad@gmail.com | +30 695 109 7562\n\n\n\n\n\n                                                                                         Σελίδα 2 από 2'};
 function choose(lang){
-  document.documentElement.lang=lang;
+  for (const id of ['meta', 'summary', 'transcript']) {
+    document.getElementById(id).lang = lang;
+  }
   const img=document.getElementById('letter');
   img.src='assets/invitation/invitation-'+lang+'.webp';
   img.alt=lang==='el'?'Official invitation in Greek':'Official invitation in English';
@@ -210,25 +350,50 @@ function choose(lang){
 choose('el');
 
 // Simple hash router
-const views=['invitation','banners','calendar'];
+const views=['invitation','banners','calendar','secretariat'];
 function route(){
   const v=views.includes(location.hash.slice(1))?location.hash.slice(1):'invitation';
   views.forEach(n=>document.getElementById('view-'+n).classList.toggle('active',n===v));
   document.querySelectorAll('nav.menu a[data-view]').forEach(a=>{if(a.dataset.view===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
 }
-addEventListener('hashchange',()=>{route();window.scrollTo({top:document.querySelector('nav.menu').offsetTop,behavior:'smooth'})});
+addEventListener('hashchange', () => {
+  if (location.hash === '#main-content') return;
+  route();
+  document.querySelector('nav.menu').scrollIntoView({ behavior: 'instant' });
+  const heading = document.querySelector('.view.active h2');
+  heading.tabIndex = -1;
+  heading.focus({ preventScroll: true });
+});
+document.querySelector('.skip-link').addEventListener('click', event => {
+  event.preventDefault();
+  document.getElementById('main-content').focus();
+});
+document.querySelectorAll('.ics').forEach(link => {
+  link.href = '#calendar';
+  link.addEventListener('click', event => event.preventDefault());
+});
 route();
 
 // Banner lightbox
 const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('p');
+let bannerOpener;
 document.querySelectorAll('figure.banner button').forEach(b=>b.addEventListener('click',()=>{
+  bannerOpener = b;
   lbImg.src=b.dataset.full;lbImg.alt=b.querySelector('img').alt;
   lbCap.textContent=b.parentElement.querySelector('figcaption').firstChild.textContent;
   lb.classList.add('open');lb.querySelector('.x').focus();
 }));
-function closeLb(){lb.classList.remove('open')}
+function closeLb() {
+  if (!lb.classList.contains('open')) return;
+  lb.classList.remove('open');
+  bannerOpener.focus();
+}
 lb.addEventListener('click',e=>{if(e.target!==lbImg)closeLb()});
-addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+addEventListener('keydown', event => {
+  if (!lb.classList.contains('open')) return;
+  if (event.key === 'Escape') closeLb();
+  if (event.key === 'Tab') event.preventDefault();
+});
 
 // Add-to-calendar (.ics, all-day events)
 document.querySelectorAll('.ics').forEach(a=>a.addEventListener('click',()=>{
