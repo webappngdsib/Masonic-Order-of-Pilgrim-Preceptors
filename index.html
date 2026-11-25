@@ -221,6 +221,24 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+.order-intro {
+  max-width: 740px;
+  margin: 20px auto 0;
+  padding: clamp(20px, 5vw, 42px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.order-intro p { font-size: 1.0625rem; line-height: 1.7; margin: 0 0 1em; }
+.order-intro .signature { padding-top: 18px; border-top: 1px solid var(--line); margin-bottom: 0; }
+.order-intro .signature span { display: block; color: var(--muted); font-size: .9375rem; }
+.order-intro .order-source { margin: 16px 0 0; font-size: .9375rem; }
+.order-intro .order-source a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 600px) {
+  nav.menu ul { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  nav.menu li { grid-column: span 2; }
+  nav.menu li:nth-child(4), nav.menu li:nth-child(5) { grid-column: span 3; }
+}
 </style>
 </head>
 <body>
@@ -233,6 +251,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
 
 <nav class="menu" aria-label="Main menu">
   <ul>
+    <li><a href="#home" data-view="home">Home</a></li>
     <li><a href="#invitation" data-view="invitation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Invitation</a></li>
     <li><a href="#banners" data-view="banners"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v18M5 4h13l-3 4.5 3 4.5H5"/></svg>Banners</a></li>
     <li><a href="#calendar" data-view="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Calendar</a></li>
@@ -242,8 +261,18 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
 </nav>
 
 <main id="main-content" tabindex="-1">
+  <section class="view active" id="view-home" lang="el" aria-labelledby="h-home">
+    <h2 class="title" id="h-home">Τι διδάσκει το Τάγμα</h2>
+    <div class="order-intro">
+      <p><strong>Τι μπορεί να μας διδάξει ένα ταξίδι από την Ιερουσαλήμ ως την Αγγλία;</strong> Στις τελετές των Pilgrim Preceptors, το πρώτο μέρος του ταξιδιού οδηγεί τον Προσκυνητή στη Ρώμη. Στο δεύτερο, η αφήγηση συνεχίζεται από τη Ρώμη στην Αγγλία. Μέσα από αυτή τη διαδρομή, το Τάγμα αφηγείται πώς, κατά την παράδοσή του, ο Τεκτονισμός έφτασε στην Αγγλία.</p>
+      <p>Το νόημα της διαδρομής χωρά σε τρεις λέξεις: <strong>Αδελφοσύνη, Ισότητα και Ελευθερία.</strong> Τι σημαίνουν στην πράξη; Να στεκόμαστε δίπλα στον άλλον, να του αναγνωρίζουμε την ίδια αξία που ζητούμε για εμάς και να σεβόμαστε την ελευθερία του.</p>
+      <p class="signature">Με αδελφικούς χαιρετισμούς,<br><strong>Δημήτριος Σκιαδόπουλος</strong><span lang="en">Past Assistant Grand Marshal · Executive Organiser, Region Hellas</span></p>
+      <p class="order-source"><a href="https://pilgrimpreceptors.com/">Επίσημος ιστότοπος του Τάγματος στην Αγγλία</a></p>
+    </div>
+  </section>
+
   <!-- INVITATION -->
-  <section class="view active" id="view-invitation" aria-labelledby="h-inv">
+  <section class="view" id="view-invitation" aria-labelledby="h-inv">
     <h2 class="title" id="h-inv">Personal Invitation</h2>
     <div class="rule">✦</div>
     <p class="sub">Founding Membership · Athens, 9 November 2026</p>
@@ -350,9 +379,9 @@ function choose(lang){
 choose('el');
 
 // Simple hash router
-const views=['invitation','banners','calendar','secretariat'];
+const views=['home','invitation','banners','calendar','secretariat'];
 function route(){
-  const v=views.includes(location.hash.slice(1))?location.hash.slice(1):'invitation';
+  const v=views.includes(location.hash.slice(1))?location.hash.slice(1):'home';
   views.forEach(n=>document.getElementById('view-'+n).classList.toggle('active',n===v));
   document.querySelectorAll('nav.menu a[data-view]').forEach(a=>{if(a.dataset.view===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
 }
