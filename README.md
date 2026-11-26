@@ -15,7 +15,6 @@
 | Ενότητα | Περιεχόμενο και λειτουργίες |
 | --- | --- |
 | [Αρχική](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#home) | Σύντομη εισαγωγή στη διδασκαλία του Τάγματος και στις αξίες του. |
-| [Πρόσκληση](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#invitation) | Προσωπική πρόσκληση για ιδρυτικά μέλη στα ελληνικά και στα αγγλικά, με κείμενο για αναζήτηση και αντιγραφή. |
 | [Λάβαρα](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#banners) | Επίσημα λάβαρα του Region Hellas και των Conclaves Αθήνας, Πειραιά, Κέρκυρας και Θεσσαλονίκης, με προβολή σε μεγέθυνση. |
 | [Ημερολόγιο](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#calendar) | Επιβεβαιωμένες ημερομηνίες για το 2027 και προσωρινές για το 2028, με προσθήκη εκδηλώσεων στο ημερολόγιο μέσω αρχείων `.ics`. |
 | [Γραμματεία](https://webappngdsib.github.io/Masonic-Order-of-Pilgrim-Preceptors/#secretariat) | Είσοδος στο ιδιωτικό portal για εξουσιοδοτημένους λογαριασμούς ChatGPT. |
@@ -23,10 +22,10 @@
 
 ## Ιδιωτική Γραμματεία
 
-Το [portal της Γραμματείας](https://pilgrim-preceptors-hellas-secretariat.dskiad.chatgpt.site/) φιλοξενείται στο ChatGPT Sites και απαιτεί σύνδεση με εξουσιοδοτημένο λογαριασμό ChatGPT. Η πρόσβαση ορίζεται ανά λογαριασμό από τον ιδιοκτήτη.
+Το [portal της Γραμματείας](https://pilgrim-preceptors-hellas-secretariat.dskiad.chatgpt.site/) φιλοξενείται στο ChatGPT Sites και απαιτεί σύνδεση με εξουσιοδοτημένο λογαριασμό ChatGPT. Η πρόσβαση ορίζεται ανά λογαριασμό από τον ιδιοκτήτη. Η επίσημη πρόσκληση για ιδρυτικά μέλη είναι διαθέσιμη στη Γραμματεία, στις ενότητες **Προσκλήσεις και απαντήσεις** και **Έγγραφα**.
 
 Το μενού του portal περιλαμβάνει **Επισκόπηση**, **Μέλη**, **Conclaves**, **Προσκλήσεις και απαντήσεις**, **Αλληλογραφία**, **Έγγραφα**, **Λάβαρα**, **Τάγμα και πρόγραμμα** και **Διαχείριση**.
 
 ## Αρχεία και φιλοξενία
 
-Η δημόσια ιστοσελίδα δημοσιεύεται μέσω GitHub Pages. Το [`index.html`](index.html) περιέχει όλες τις δημόσιες ενότητες. Οι εικόνες της πρόσκλησης και των λαβάρων βρίσκονται στους φακέλους [`assets/invitation/`](assets/invitation/) και [`assets/banners/`](assets/banners/).
+Η δημόσια ιστοσελίδα δημοσιεύεται μέσω GitHub Pages. Το [`index.html`](index.html) περιέχει όλες τις δημόσιες ενότητες. Οι εικόνες των λαβάρων βρίσκονται στον φάκελο [`assets/banners/`](assets/banners/).
