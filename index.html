@@ -252,6 +252,43 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
   nav.menu li { grid-column: span 2; }
   nav.menu li:nth-child(4), nav.menu li:nth-child(5) { grid-column: span 3; }
 }
+
+.order-guide { margin-top: clamp(34px, 6vw, 60px); }
+.order-guide h3 { color: var(--deep); font-size: clamp(24px, 3vw, 32px); margin: 0 0 10px; }
+.order-guide p, .order-guide li { line-height: 1.65; }
+.order-guide .guide-lead { max-width: 72ch; margin: 0 0 22px; }
+.order-stages {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
+}
+.order-stages li {
+  padding: clamp(16px, 3vw, 26px);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  background: linear-gradient(142deg, var(--deep), #50215e);
+  color: #fff;
+}
+.order-stages h4, .order-guide-card h4 { font-size: 1.2rem; margin: 0 0 6px; }
+.order-stages .route { color: var(--gold-l); font-size: .875rem; }
+.order-stages p, .order-guide-card p { margin: 7px 0 0; }
+.order-guide-grid {
+  margin-top: 14px; display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;
+}
+.order-guide-card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-top: 3px solid var(--gold); border-radius: 10px;
+  padding: clamp(16px, 3vw, 25px);
+}
+.order-guide-card h4 { color: var(--deep); }
+.order-guide details { max-width: none; margin: 14px 0; }
+.order-guide details ul { columns: 2; padding-inline-start: 22px; }
+.order-guide details li { break-inside: avoid; }
+.order-guide .sources { color: var(--muted); font-size: .9375rem; }
+@media (max-width: 680px) {
+  .order-stages, .order-guide-grid { grid-template-columns: minmax(0, 1fr); }
+  .order-guide details ul { columns: 1; }
+}
 </style>
 </head>
 <body>
@@ -286,6 +323,41 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
         <p class="order-source"><a href="https://pilgrimpreceptors.com/">Επίσημος ιστότοπος του Τάγματος στην Αγγλία</a></p>
       </div>
     </div>
+
+    <section class="order-guide" aria-labelledby="order-guide-title">
+      <h3 id="order-guide-title">Το Τάγμα των Προσκυνητών Καθηγουμένων</h3>
+      <p class="guide-lead">Το Τάγμα δέχεται μέλη διαφορετικών θρησκειών. Η παράδοσή του αφηγείται, μέσα από τεκτονικούς θρύλους, τη διάδοση της Βασιλικής Τέχνης από την Ιερουσαλήμ προς τη Δύση.</p>
+      <ol class="order-stages" aria-label="Οι δύο βαθμοί και η εγκατάσταση στην Έδρα">
+        <li><h4>Προσκυνητής</h4><span class="route">Ιερουσαλήμ · Ρώμη</span><p>Ο πρώτος βαθμός ακολουθεί τον Προσκυνητή από τα ερείπια του Ναού της Ιερουσαλήμ έως τις κατακόμβες της Ρώμης. Στον θρύλο, ζητά την επιστροφή των ιερών οροθεσίων της Βασιλικής Τέχνης.</p></li>
+        <li><h4>Καθηγούμενος</h4><span class="route">Ρώμη · Αγγλία</span><p>Ο δεύτερος βαθμός συνδέει το ταξίδι με τον Αυγουστίνο της Καντουαρίας και τη μετάδοση των τεκτονικών αρχών. Η διδασκαλία του αναφέρεται σε επτά συμβολικά γεγονότα και στα Φώτα του Τεκτονισμού.</p></li>
+        <li><h4>Έκλαμπρος Καθηγούμενος</h4><span class="route">Εγκατάσταση στην Έδρα</span><p>Κατά την ανάληψη της προεδρίας του Κονκλαβίου αποδίδεται η Τάξη του Ιερού Διδασκάλου. Η τελετή αντλεί από τη βιβλική αφήγηση του Ιησού του Ναυή και της ανάληψης της ηγεσίας.</p></li>
+      </ol>
+      <div class="order-guide-grid">
+        <article class="order-guide-card">
+          <h4>Εισδοχή και ενεργή ιδιότητα</h4>
+          <p>Η εισδοχή γίνεται κατόπιν πρόσκλησης. Ο υποψήφιος πρέπει να είναι ενεργό μέλος αναγνωρισμένου Περιστυλίου Βασιλικής Αψίδας και Συμβολικής Στοάς, με την ιδιότητα του Πρώην Πρώτου Άρχοντος ή αντίστοιχου αξιώματος και του Πρώην Σεβασμίου αντίστοιχα. Η ενεργή ιδιότητα και στα δύο σώματα απαιτείται και για την παραμονή στο Τάγμα. Για ορισμένα Κονκλάβια των ΗΠΑ ισχύει ειδική πρόβλεψη για τον βαθμό του Πρώην Σεβασμίου.</p>
+        </article>
+        <article class="order-guide-card">
+          <h4>Ιστορία και οργάνωση</h4>
+          <p>Σύμφωνα με την επίσημη ιστορία, το Τάγμα συγκροτήθηκε με τη σημερινή του μορφή το 1984. Το πρώτο Κονκλάβιο, του Αγίου Αυγουστίνου, καθιερώθηκε στο Λονδίνο το 1998. Το Κονκλάβιο είναι η τοπική μονάδα του Τάγματος. Τη συνολική διοίκηση ασκούν ο Μεγάλος Διδάσκαλος και οι αξιωματικοί του Μεγάλου Κονκλαβίου.</p>
+        </article>
+      </div>
+      <details>
+        <summary>Τα αξιώματα του Κονκλαβίου</summary>
+        <ul>
+          <li>Έκλαμπρος Καθηγούμενος</li><li>Έξοχος Καθηγούμενος</li><li>Άξιος Καθηγούμενος</li>
+          <li>Ευχέτης Καθηγούμενος</li><li>Γραφέας Καθηγούμενος</li><li>Τελετάρχης Καθηγούμενος</li>
+          <li>Θησαυροφύλακας Καθηγούμενος</li><li>Πρόσθετος Τελετάρχης Καθηγούμενος</li>
+          <li>Οργανιστής Καθηγούμενος</li><li>Φύλακας της Πύλης</li>
+          <li>Επιμελητής Καθηγούμενος (έως τρεις)</li><li>Φρουρός Καθηγούμενος</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Τα διάσημα και το κόσμημα</summary>
+        <p>Ο υποψήφιος προσέρχεται με τα διάσημα της Βασιλικής Αψίδας της δικαιοδοσίας του. Ο Προσκυνητής φέρει το τριγωνικό κόσμημα σε καφέ περιλαίμιο. Ο Καθηγούμενος φέρει πορφυρή ταινία με το έμβλημα, το αντίστοιχο κόσμημα πέτου της Βασιλικής Αψίδας και το κόσμημα του Τάγματος σε λευκό περιλαίμιο. Οι Έκλαμπροι και οι Πρώην Έκλαμπροι Καθηγούμενοι φέρουν το κόσμημα σε πορφυρό περιλαίμιο.</p>
+      </details>
+      <p class="sources">Πηγές: K. B. Jackson, <cite>Beyond the Craft</cite> (2016), <cite>Constitutions and Regulations</cite> (2016), τα τυπικά του Τάγματος και η <a href="https://pilgrimpreceptors.com/history.php">επίσημη ιστορία του Μεγάλου Κονκλαβίου</a>.</p>
+    </section>
   </section>
 
   <!-- INVITATION -->
