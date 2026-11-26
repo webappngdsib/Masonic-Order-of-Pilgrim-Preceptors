@@ -25,7 +25,7 @@ nav.menu a[aria-current=page]{color:var(--gold-l);border-bottom-color:var(--gold
 nav.menu svg{width:16px;height:16px;flex:none}
 @media(max-width:560px){nav.menu a{padding:13px 10px;font-size:11.5px;letter-spacing:.06em;gap:5px}nav.menu svg{display:none}}
 
-main{max-width:1060px;margin:auto;padding:22px 16px 50px}
+main{margin:auto;padding:22px 16px 50px}
 section.view{display:none}
 section.view.active{display:block;animation:fade .35s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -91,7 +91,7 @@ figcaption span{display:block;font-weight:400;color:var(--muted);letter-spacing:
 .events p{margin:5px 0 0;font:13.5px/1.55 system-ui,sans-serif;color:#4e4254}
 .ics{display:inline-block;margin-top:8px;font:600 12px system-ui,sans-serif;color:var(--purple);text-decoration:none;border:1px solid #d9c6e0;border-radius:16px;padding:4px 11px;cursor:pointer;background:#fff}
 .ics:hover{background:#f6eef8}
-.note{max-width:850px;margin:28px auto 0;text-align:center;font:13px/1.6 system-ui,sans-serif;color:var(--muted)}
+.note{margin:28px auto 0;font:13px/1.6 system-ui,sans-serif;color:var(--muted)}
 .note strong{color:var(--deep)}
 
 footer{text-align:center;border-top:2px solid var(--gold);padding:22px;color:#6e5d74;font:12px system-ui,sans-serif}
@@ -161,7 +161,6 @@ summary { padding-block: 10px; }
 figcaption { font-size: .875rem; }
 footer { padding-bottom: max(22px, env(safe-area-inset-bottom)); }
 footer a { display: inline-flex; align-items: center; min-height: 44px; margin-inline: 8px; }
-.secretariat { max-width: 810px; margin-inline: auto; }
 .secretariat-access { margin-top: 26px; }
 .secretariat-access a {
   display: inline-flex;
@@ -247,7 +246,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
 .order-guide { margin-top: clamp(34px, 6vw, 60px); }
 .order-guide h3 { color: var(--deep); font-size: clamp(24px, 3vw, 32px); margin: 0 0 10px; }
 .order-guide p, .order-guide li { line-height: 1.65; }
-.order-guide .guide-lead { max-width: 72ch; margin: 0 0 22px; }
+.order-guide .guide-lead { margin: 0 0 22px; }
 .order-stages {
   list-style: none; padding: 0; margin: 0;
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
@@ -290,7 +289,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
   border-radius: 12px;
   scroll-margin-top: 120px;
 }
-.order-history p { max-width: 76ch; margin: 0 0 1em; }
+.order-history p { margin: 0 0 1em; }
 .history-reading {
   list-style: none;
   display: grid;
@@ -355,6 +354,12 @@ header.top { padding-top: calc(62px + env(safe-area-inset-top)); }
 nav.menu { top: calc(63px + env(safe-area-inset-top)); }
 .order-history { scroll-margin-top: calc(185px + env(safe-area-inset-top)); }
 @media print { .site-language { display: none !important; } }
+
+main p:not(.sub, .signature, .order-source, .calendar-portal) {
+  text-align: justify;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
 </style>
 </head>
 <body>
