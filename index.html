@@ -332,6 +332,9 @@ main p:not(.sub, .signature, .order-source, .calendar-portal) {
   hyphens: auto;
   overflow-wrap: anywhere;
 }
+
+.site-credit { margin: 6px auto 0; font-size: .875rem; line-height: 1.6; }
+.site-credit strong { color: var(--purple); }
 </style>
 </head>
 <body>
@@ -487,7 +490,12 @@ main p:not(.sub, .signature, .order-source, .calendar-portal) {
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Προβολή λαβάρου" data-aria-label-en="Banner preview" data-aria-label-el="Προβολή λαβάρου"><button class="x" aria-label="Κλείσιμο" data-aria-label-en="Close" data-aria-label-el="Κλείσιμο">×</button><img alt=""/><p></p></div>
 
-<footer>Pilgrim Preceptors · Region Hellas · <a href="#secretariat"><span data-copy="el">Γραμματεία</span><span data-copy="en">Secretariat</span></a> · <a href="https://pilgrimpreceptors.com/" target="_blank" rel="noopener">pilgrimpreceptors.com</a></footer>
+<footer>Pilgrim Preceptors · Region Hellas · <a href="#secretariat"><span data-copy="el">Γραμματεία</span><span data-copy="en">Secretariat</span></a> · <a href="https://pilgrimpreceptors.com/" target="_blank" rel="noopener">pilgrimpreceptors.com</a>
+  <p class="site-credit">
+    <span data-copy="el">Η ιστοσελίδα δημιουργήθηκε από τον <strong>Δημήτριο Σκιαδόπουλο</strong> για την υποστήριξη της οργάνωσης και της δημιουργίας του REGION HELLAS.</span>
+    <span data-copy="en">This website was created by <strong>Dimitrios Skiadopoulos</strong> to support the organisation and establishment of REGION HELLAS.</span>
+  </p>
+</footer>
 
 <script>
 function choose(lang) {
