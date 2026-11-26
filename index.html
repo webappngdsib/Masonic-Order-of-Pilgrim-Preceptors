@@ -289,6 +289,45 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
   .order-stages, .order-guide-grid { grid-template-columns: minmax(0, 1fr); }
   .order-guide details ul { columns: 1; }
 }
+
+.order-history {
+  margin-top: clamp(30px, 5vw, 52px);
+  padding: clamp(18px, 5vw, 42px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: 12px;
+  scroll-margin-top: 120px;
+}
+.order-history p { max-width: 76ch; margin: 0 0 1em; }
+.history-reading {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr));
+  gap: 12px;
+  margin: 22px 0 0;
+  padding: 0;
+}
+.history-reading a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  line-height: 1.4;
+}
+.history-reading .pdf-label {
+  color: var(--deep);
+  background: var(--gold-l);
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: .75rem;
+  font-weight: 700;
+}
 </style>
 </head>
 <body>
@@ -338,8 +377,8 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
           <p>Η εισδοχή γίνεται κατόπιν πρόσκλησης. Ο υποψήφιος πρέπει να είναι ενεργό μέλος αναγνωρισμένου Περιστυλίου Βασιλικής Αψίδας και Συμβολικής Στοάς, με την ιδιότητα του Πρώην Πρώτου Άρχοντος ή αντίστοιχου αξιώματος και του Πρώην Σεβασμίου αντίστοιχα. Η ενεργή ιδιότητα και στα δύο σώματα απαιτείται και για την παραμονή στο Τάγμα. Για ορισμένα Κονκλάβια των ΗΠΑ ισχύει ειδική πρόβλεψη για τον βαθμό του Πρώην Σεβασμίου.</p>
         </article>
         <article class="order-guide-card">
-          <h4>Ιστορία και οργάνωση</h4>
-          <p>Σύμφωνα με την επίσημη ιστορία, το Τάγμα συγκροτήθηκε με τη σημερινή του μορφή το 1984. Το πρώτο Κονκλάβιο, του Αγίου Αυγουστίνου, καθιερώθηκε στο Λονδίνο το 1998. Το Κονκλάβιο είναι η τοπική μονάδα του Τάγματος. Τη συνολική διοίκηση ασκούν ο Μεγάλος Διδάσκαλος και οι αξιωματικοί του Μεγάλου Κονκλαβίου.</p>
+          <h4>Οργάνωση του Τάγματος</h4>
+          <p>Το Κονκλάβιο είναι η τοπική μονάδα του Τάγματος. Τη συνολική διοίκηση ασκούν ο Μεγάλος Διδάσκαλος και οι αξιωματικοί του Μεγάλου Κονκλαβίου.</p>
         </article>
       </div>
       <details>
@@ -357,6 +396,17 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-i
         <p>Ο υποψήφιος προσέρχεται με τα διάσημα της Βασιλικής Αψίδας της δικαιοδοσίας του. Ο Προσκυνητής φέρει το τριγωνικό κόσμημα σε καφέ περιλαίμιο. Ο Καθηγούμενος φέρει πορφυρή ταινία με το έμβλημα, το αντίστοιχο κόσμημα πέτου της Βασιλικής Αψίδας και το κόσμημα του Τάγματος σε λευκό περιλαίμιο. Οι Έκλαμπροι και οι Πρώην Έκλαμπροι Καθηγούμενοι φέρουν το κόσμημα σε πορφυρό περιλαίμιο.</p>
       </details>
       <p class="sources">Πηγές: K. B. Jackson, <cite>Beyond the Craft</cite> (2016), <cite>Constitutions and Regulations</cite> (2016), τα τυπικά του Τάγματος και η <a href="https://pilgrimpreceptors.com/history.php">επίσημη ιστορία του Μεγάλου Κονκλαβίου</a>.</p>
+      <section class="order-history" id="order-history" aria-labelledby="order-history-title">
+        <h3 id="order-history-title">Η ιστορία του Τάγματος</h3>
+        <p>Οι ρίζες του τυπικού των Προσκυνητών Καθηγουμένων ανάγονται στη δεκαετία του 1870. Η επίσημη συγκρότηση του Τάγματος τοποθετείται στο <strong>1984</strong>. Στον πυρήνα των τελετών του βρίσκεται η παράδοση για τη διάδοση του Τεκτονισμού από την Ιερουσαλήμ έως την Αγγλία. Ο βαθμός του Προσκυνητή αφηγείται το πρώτο σκέλος της πορείας, από την Ιερουσαλήμ στη Ρώμη, ενώ ο βαθμός του Καθηγουμένου συνεχίζει την αφήγηση από τη Ρώμη στην Αγγλία.</p>
+        <p>Η παλαιότερη αφήγηση των απαρχών μάς μεταφέρει σε ένα βροχερό Σαββατοκύριακο στο Μάντσεστερ. Τρεις ηθοποιοί, μέλη του Τεκτονισμού, είχαν μείνει εκεί όταν η παράσταση στην οποία έπαιζαν διακόπηκε αιφνιδίως. Αξιοποιώντας υλικό από τεκτονικές βιβλιοθήκες της βόρειας Αγγλίας, συνέταξαν ένα πρώτο χειρόγραφο. Η νεότερη μελέτη τοποθετεί το έργο των ηθοποιών στις αρχές του 20ού αιώνα και εντοπίζει πίσω του ένα παλαιότερο τυπικό ιρλανδικής προέλευσης.</p>
+        <p>Το χειρόγραφο πέρασε από τον Albert Le Fre στον γιο του Eric και κατόπιν στον John Edward Nowell Walker. Το 1984, επί Howard Stokes, άρχισε η ανασυγκρότηση του Τάγματος. Ύστερα από επεξεργασία του τυπικού, οι δύο τελετές τελέστηκαν για πρώτη φορά πλήρως τον Μάρτιο του 1986.</p>
+        <p>Το 1998 καθιερώθηκε στο Λονδίνο το Κονκλάβιο του Αγίου Αυγουστίνου. Με τα χρόνια, το Τάγμα επεκτάθηκε πέρα από τη Βρετανία. Το Κονκλάβιο Mayflower καθιερώθηκε για τις Ηνωμένες Πολιτείες το 2010 και το Κονκλάβιο Athenaeum στην Αθήνα το 2019.</p>
+        <ul class="history-reading" aria-label="Ιστορικές μελέτες στα αγγλικά">
+          <li><a href="https://pilgrimpreceptorsusa.org/wp-content/uploads/2019/10/origins-of-the-pilgrim-preceptors-handbook-2019.pdf"><span class="pdf-label">PDF</span>Η ιστορία και οι απαρχές του Τάγματος (2019)</a></li>
+          <li><a href="https://pilgrimpreceptorsusa.org/wp-content/uploads/2023/09/a-revised-concise-history-of-the-masonic-order-of-pilgrim-preceptors_-29mar2023.pdf"><span class="pdf-label">PDF</span>Αναθεωρημένη συνοπτική ιστορία του Τάγματος (2023)</a></li>
+        </ul>
+      </section>
     </section>
   </section>
 
